@@ -54,7 +54,12 @@ Tactile : moitié gauche de l'écran = déplacement, moitié droite = caméra, a
 
 ## Lancer le jeu
 
-Le jeu est un site **100 % statique** (dossier `public/`).
+**Le plus simple :** installe [Node.js](https://nodejs.org) (une seule fois), puis double-clique sur
+`Lancer-le-jeu.bat` (Windows) ou `Lancer-le-jeu.command` (Mac). Le jeu s'ouvre tout seul sur
+**http://localhost:8080**. Garde la fenêtre noire ouverte pendant que tu joues.
+
+Le jeu est un site **100 % statique** (dossier `public/`) : ouvrir `index.html` en double-cliquant ne marche pas,
+il faut passer par un petit serveur.
 
 ```bash
 npm start            # serveur intégré sans dépendance → http://localhost:8080
