@@ -88,12 +88,21 @@ function buildTerrain(game, b) {
   // shallow sea floor the player can wade on, and an invisible fence further out
   game.physics.addBox(0, -0.85, 0, 260, 0.6, 260);
   const fence = islandOutline(1.12, 48);
-  for (let i = 0; i < fence.length; i++) {
-    const a = fence[i];
-    const c = fence[(i + 1) % fence.length];
+  const wallSeg = (a, c) => {
     const len = a.distanceTo(c) + 1;
     const ang = Math.atan2(c.y - a.y, c.x - a.x);
     game.physics.addBox((a.x + c.x) / 2, 1, (a.y + c.y) / 2, len, 4, 1, -ang);
+  };
+  const PIER = 1.75; // the pier (x = ±1.6) crosses the fence on the south side: leave a gap, its rails close the sides
+  for (let i = 0; i < fence.length; i++) {
+    const a = fence[i];
+    const c = fence[(i + 1) % fence.length];
+    const crossesPier = a.y > 0 && c.y > 0 && Math.min(a.x, c.x) < PIER && Math.max(a.x, c.x) > -PIER;
+    if (!crossesPier) { wallSeg(a, c); continue; }
+    const at = (x) => a.clone().lerp(c, (x - a.x) / (c.x - a.x));
+    const [lo, hi] = a.x < c.x ? [a, c] : [c, a];
+    if (lo.x < -PIER) wallSeg(lo, at(-PIER - 0.5));
+    if (hi.x > PIER) wallSeg(at(PIER + 0.5), hi);
   }
 }
 

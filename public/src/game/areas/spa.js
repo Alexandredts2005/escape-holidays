@@ -55,7 +55,8 @@ export function buildSpa(game, b, hotel) {
   duckSpot(game, b, 'd_jacuzzi', -12.4, 0.58, -19.2, 1.2);
   for (let i = 0; i < 3; i++) { const d = duck(0xffffff, 1.0); d.position.set(-11.4 + i * 0.4, 0.58, -20.4 + (i % 2) * 0.5); d.rotation.y = i * 1.7; b.root.add(dyn(d)); const z0 = d.position.z; game.updaters.push((dt, t) => { d.position.z = z0 + Math.sin(t * 0.7 + i) * 0.15; d.rotation.y += dt * 0.2; }); }
   // loungers, plants, towels
-  for (let i = 0; i < 3; i++) b.prop('furniture-kit/loungeChairRelax', -9.0, 0.05, -23.6 - i * 1.4, { rot: -Math.PI / 2, s: 1.05 });
+  // loungers kept clear of the entrance from the hall (door at z -26.8..-25.2)
+  for (const z of [-22.6, -23.9, -28.6]) b.prop('furniture-kit/loungeChairRelax', -9.0, 0.05, z, { rot: -Math.PI / 2, s: 1.05 });
   for (const [x, z] of [[-15.4, -16.7], [-8.7, -16.7], [-15.4, -39.3], [-8.7, -39.3]]) b.prop('furniture-kit/pottedPlant', x, 0.05, z, { s: 1.4 });
   const shelf = mesh(new THREE.BoxGeometry(0.45, 1.6, 1.4), paintedMat('wood', 0xffe2c4), -15.6, 0.85, -31.0, b.root);
   game.physics.addBox(-15.6, 0.85, -31.0, 0.45, 1.6, 1.4);

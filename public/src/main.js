@@ -255,6 +255,19 @@ class Game {
     this.icons = makeIcons(this);
     this.ui.portraits = this.icons.portraits;
     this.renderer.r.compile(this.scene, this.rig.cam);
+    // warm-up: render each area once behind the loading screen so shaders (incl. shadow passes) and
+    // textures are ready before play — avoids hitches the first time a place comes into view
+    this.ui.loading(0.96, 'Mise en place des transats…');
+    const views = [[0, 3, 66, 0, 1, 30], [0, 2.5, -2, 0, 2, -30], [0, 2.5, -20, 0, 2, -38], [-16, 6, -18, -16, 5, -32], [-9, 2.5, -18, -20, 1, -34],
+      [9, 2.5, -17, 20, 1, -34], [16, 6, -17, 16, 5, -34], [30, 4, -6, 40, 0, -20], [-30, 4, -2, -42, 0, -16], [-10, 4, 30, -40, 1, 40]];
+    for (const [x, y, z, lx, ly, lz] of views) {
+      this.rig.cam.position.set(x, y, z);
+      this.rig.cam.lookAt(lx, ly, lz);
+      this.player.teleport(x, y - 1.5, z);
+      this.updateLights(0.25);
+      this.renderer.render(this.scene, this.rig.cam);
+      await new Promise((r) => setTimeout(r, 0));
+    }
     this.ui.loading(1, 'Bienvenue !');
     this.player.teleport(...this.world.spawn.title);
     this.setTimeOfDay('day');

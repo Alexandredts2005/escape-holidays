@@ -31,11 +31,14 @@ export function buildExterior(game, b, hotel) {
   b.surface(-2.5, -1, 2.5, 24, 'concrete', -1, 3);
   b.surface(-1.6, 24, 1.6, 80, 'wood', -1, 3);
   // flower beds along the forecourt
+  // two beds per side, with a gap in front of each garden gate (z -9.3..-6.7)
   for (const x of [-13.5, 13.5]) {
-    b.box(x, 0.08, -8.5, 3, 0.35, 13, paintedMat('terracotta', 0xd9a77f), { collide: true });
-    for (let i = 0; i < 9; i++) {
-      const f = ['nature-kit/flower_redA', 'nature-kit/flower_yellowA', 'nature-kit/flower_purpleA'][i % 3];
-      b.prop(f, x + (rnd() - 0.5) * 2, 0.43, -14 + i * 1.4, { s: 2.2, rot: rnd() * 6, collide: false });
+    for (const [z0, z1] of [[-15, -10.6], [-5.4, -2]]) {
+      b.box(x, 0.08, (z0 + z1) / 2, 3, 0.35, z1 - z0, paintedMat('terracotta', 0xd9a77f), { collide: true });
+      for (let z = z0 + 0.6; z < z1 - 0.3; z += 1.4) {
+        const f = ['nature-kit/flower_redA', 'nature-kit/flower_yellowA', 'nature-kit/flower_purpleA'][Math.floor(rnd() * 3)];
+        b.prop(f, x + (rnd() - 0.5) * 2, 0.43, z, { s: 2.2, rot: rnd() * 6, collide: false });
+      }
     }
   }
 

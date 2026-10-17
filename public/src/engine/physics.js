@@ -34,7 +34,8 @@ export class Physics {
     const ang = Math.atan2(y1 - y0, len);
     const l = Math.hypot(len, y1 - y0);
     const g = new THREE.BoxGeometry(w, 0.3, l);
-    const m = new THREE.Matrix4().makeRotationX(-ang);
+    // rotY = 0 rises towards -Z (same convention as Builder.stairs): the -Z end goes up
+    const m = new THREE.Matrix4().makeRotationX(ang);
     g.applyMatrix4(m);
     g.translate(0, (y0 + y1) / 2 - 0.15 / Math.cos(ang), 0);
     g.applyMatrix4(new THREE.Matrix4().makeRotationY(rotY));

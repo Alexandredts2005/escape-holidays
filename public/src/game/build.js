@@ -244,7 +244,14 @@ export class Builder {
 
   sign(lines, x, y, z, rot, w = 1.6, h = 0.8, o = {}) {
     const t = textTexture(lines, { w: 512, h: Math.round(512 * h / w), font: o.font || '700 44px Poppins', bg: o.bg ?? '#fff6e3', fg: o.fg || '#2a2233', border: o.border ?? '#2a2233' });
-    const p = this.plane(x, y, z, w, h, t, { rot, ...o });
+    // a double-sided plane would show mirrored text from behind: use two back-to-back planes instead
+    const p = this.plane(x, y, z, w, h, t, { rot, ...o, double: false });
+    if (o.double) {
+      const off = 0.012;
+      p.position.x += Math.sin(rot) * off;
+      p.position.z += Math.cos(rot) * off;
+      this.plane(x - Math.sin(rot) * off, y, z - Math.cos(rot) * off, w, h, t, { rot: rot + Math.PI, ...o, double: false });
+    }
     return p;
   }
 
