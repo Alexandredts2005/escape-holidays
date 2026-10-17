@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1b2440">
+  <meta name="description" content="Escape Holidays — Hôtel Les Mirages : un jeu d'évasion en 3D dans un palace de vacances. Explore, observe, résous les énigmes et échappe-toi !">
+  <title>Escape Holidays — Hôtel Les Mirages</title>
+  <link rel="icon" href="assets/ui/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three/three.module.min.js",
+      "three/addons/": "./vendor/three/addons/",
+      "three-mesh-bvh": "./vendor/bvh/three-mesh-bvh.module.js"
+    } }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="hud" class="hidden">
+    <div id="objective"><span class="label">Objectif</span><span id="objective-text"></span></div>
+    <div id="counters">
+      <div class="counter" id="c-biscuit" title="Biscuits pour Gustave (indices)"><i class="ico ico-biscuit"></i><b>0</b></div>
+      <div class="counter" id="c-duck" title="Canards dorés trouvés"><i class="ico ico-duck"></i><b>0/10</b></div>
+      <div class="counter" id="c-time" title="Temps de jeu"><i class="ico ico-clock"></i><b>0:00</b></div>
+    </div>
+    <div id="timer" class="hidden"><span id="timer-label">Sauna</span><b id="timer-value">2:30</b></div>
+    <div id="prompt" class="hidden"><kbd>E</kbd><span></span></div>
+    <div id="crosshair"></div>
+    <div id="inventory"></div>
+    <div id="keys-help">ZQSD / WASD : bouger · Maj : courir · Espace : sauter · E : interagir · H : indice · J : carnet · Échap : pause</div>
+  </div>
+
+  <div id="dialog" class="hidden">
+    <div id="dialog-portrait"></div>
+    <div id="dialog-body"><div id="dialog-name"></div><div id="dialog-text"></div></div>
+    <div id="dialog-next">▼</div>
+  </div>
+
+  <div id="note" class="hidden"><div class="paper"><div id="note-title"></div><div id="note-text"></div></div><div class="note-close">Clic ou Échap pour fermer</div></div>
+  <div id="inspect-bar" class="hidden"><span id="inspect-title"></span><button id="inspect-back">Retour (Échap)</button></div>
+  <div id="toasts"></div>
+  <div id="fade"></div>
+  <div id="subtitle" class="hidden"></div>
+
+  <div id="screen-title" class="screen hidden">
+    <div class="title-wrap">
+      <img id="logo" src="assets/ui/logo.png" alt="Escape Holidays">
+      <div class="menu" id="title-menu"></div>
+      <div class="foot">Jeu d'évasion en 3D · Solo · Modèles 3D CC0 Kenney · Musique originale</div>
+    </div>
+  </div>
+  <div id="screen-pause" class="screen hidden"><div class="panel"><h2>Pause</h2><div class="menu" id="pause-menu"></div></div></div>
+  <div id="screen-journal" class="screen hidden"><div class="panel wide"><h2>Carnet de voyage</h2><div id="journal-body"></div><div class="menu"><button data-close>Fermer (J)</button></div></div></div>
+  <div id="screen-wardrobe" class="screen hidden"><div class="panel wide"><h2>Vestiaire</h2><p class="sub">Chaque paire de canards dorés débloque un nouveau look.</p><div id="wardrobe-grid"></div><div class="menu"><button data-close>Fermer</button></div></div></div>
+  <div id="screen-options" class="screen hidden"><div class="panel"><h2>Options</h2><div id="options-body"></div><div class="menu"><button data-close>Retour</button></div></div></div>
+  <div id="screen-end" class="screen hidden"><div class="panel wide"><div id="end-body"></div><div class="menu" id="end-menu"></div></div></div>
+  <div id="loading" class="screen"><div class="load-wrap"><div class="load-title">Hôtel Les Mirages</div><div class="load-bar"><div id="load-fill"></div></div><div id="load-text">Préparation des valises…</div></div></div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

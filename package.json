@@ -1,0 +1,16 @@
+{
+  "name": "escape-holidays",
+  "version": "1.0.0",
+  "description": "Escape Holidays — Hôtel Les Mirages : jeu d'évasion 3D en vue à la troisième personne, style dessin animé, dans un palace de vacances.",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tools/playtest.cjs http://localhost:8080/",
+    "music": "python3 tools/music.py public/assets/music",
+    "ui": "python3 tools/make_ui.py"
+  },
+  "engines": { "node": ">=18" },
+  "optionalDependencies": { "playwright": "^1.47.0" }
+}
