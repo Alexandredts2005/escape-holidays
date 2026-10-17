@@ -1,0 +1,82 @@
+{
+ "sprites": {
+  "lea_gene": [
+   224,
+   1100
+  ],
+  "lea_joie": [
+   224,
+   1100
+  ],
+  "lea_neutre": [
+   224,
+   1100
+  ],
+  "lea_triste": [
+   224,
+   1100
+  ],
+  "mia_joie": [
+   274,
+   1100
+  ],
+  "mia_neutre": [
+   274,
+   1100
+  ],
+  "mia_triste": [
+   274,
+   1100
+  ],
+  "hugo_gene": [
+   286,
+   1100
+  ],
+  "hugo_neutre": [
+   286,
+   1100
+  ],
+  "hugo_doute": [
+   286,
+   1100
+  ],
+  "hugo_triste": [
+   286,
+   1100
+  ],
+  "hugo_joie": [
+   286,
+   1100
+  ],
+  "victor_joie": [
+   508,
+   1100
+  ],
+  "victor_neutre": [
+   508,
+   1100
+  ],
+  "ines_neutre": [
+   398,
+   1100
+  ],
+  "ines_joie": [
+   398,
+   1100
+  ],
+  "zack_neutre": [
+   298,
+   1100
+  ],
+  "helene_neutre": [
+   541,
+   1100
+  ]
+ },
+ "berry": {
+  "size": [
+   458,
+   1100
+  ]
+ }
+}

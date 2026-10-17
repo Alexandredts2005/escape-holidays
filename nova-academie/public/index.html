@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0b0614">
+  <meta name="description" content="NOVA Académie — vis une saison complète dans le château des futures stars : cours, évaluations, nominations, primes en direct, quiz et multijoueur.">
+  <title>NOVA Académie</title>
+  <link rel="icon" href="assets/fx/star.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <style>
+    @font-face { font-family: 'Poppins'; src: url(assets/fonts/Poppins-Regular.ttf); font-weight: 400; font-display: block; }
+    @font-face { font-family: 'Poppins'; src: url(assets/fonts/PoppinsSemiBold-Regular.ttf); font-weight: 600; font-display: block; }
+    @font-face { font-family: 'Poppins'; src: url(assets/fonts/PoppinsExtraBold-Regular.ttf); font-weight: 800; font-display: block; }
+    @font-face { font-family: 'Montserrat'; src: url(assets/fonts/Montserrat-Black.ttf); font-weight: 900; font-display: block; }
+    @font-face { font-family: 'Bebas'; src: url(assets/fonts/BebasNeue-Regular.ttf); font-display: block; }
+    @font-face { font-family: 'Pacifico'; src: url(assets/fonts/Pacifico-Regular.ttf); font-display: block; }
+    html, body { margin: 0; height: 100%; background: #0b0614; overflow: hidden; touch-action: none; }
+    #game { width: 100%; height: 100%; }
+    #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #ffb3e6;
+            font: 600 22px Poppins, sans-serif; letter-spacing: 2px; }
+    input.nova { font: 600 34px Poppins, sans-serif; padding: 14px 24px; border-radius: 18px; border: 3px solid #ff8ce6;
+                 background: #1d0f33; color: #fff; outline: none; text-align: center; width: 520px; }
+    input.nova::placeholder { color: #9b86b8; }
+  </style>
+</head>
+<body>
+  <div id="boot">Chargement de NOVA Académie…</div>
+  <div id="game"></div>
+  <script>window.NOVA_SERVER = window.NOVA_SERVER || '';</script>
+  <script src="vendor/phaser.min.js"></script>
+  <script src="/socket.io/socket.io.js" onerror="window.io = undefined"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

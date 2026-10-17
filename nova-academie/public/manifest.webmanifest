@@ -1,0 +1,10 @@
+{
+  "name": "NOVA Académie",
+  "short_name": "NOVA",
+  "start_url": ".",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b0614",
+  "theme_color": "#0b0614",
+  "icons": [{ "src": "assets/fx/star.png", "sizes": "128x128", "type": "image/png" }]
+}

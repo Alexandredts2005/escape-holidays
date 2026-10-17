@@ -1,0 +1,20 @@
+{
+  "name": "nova-academie",
+  "version": "1.0.0",
+  "description": "NOVA Académie — jeu de télé-crochet au château : saison solo de ~2h, quiz, chant, danse, théâtre, primes et multijoueur en ligne.",
+  "private": true,
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/",
+    "build:assets": "python3 tools/make_backgrounds.py $HDRI_DIR public/assets/bg && python3 tools/make_fx.py public/assets/fx public/assets/fonts && python3 tools/make_music.py public/assets/music"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

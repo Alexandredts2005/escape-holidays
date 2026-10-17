@@ -1,0 +1,209 @@
+{
+ "lea": {
+  "exprs": [
+   "gene",
+   "joie",
+   "neutre",
+   "triste"
+  ],
+  "size": [
+   224,
+   1100
+  ]
+ },
+ "hugo": {
+  "exprs": [
+   "doute",
+   "gene",
+   "joie",
+   "neutre",
+   "triste"
+  ],
+  "size": [
+   286,
+   1100
+  ]
+ },
+ "zack": {
+  "exprs": [
+   "neutre"
+  ],
+  "size": [
+   298,
+   1100
+  ]
+ },
+ "ines": {
+  "exprs": [
+   "joie",
+   "neutre"
+  ],
+  "size": [
+   398,
+   1100
+  ]
+ },
+ "maelle": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "kenza": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "noah": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "jade": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "sacha": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "helene": {
+  "exprs": [
+   "neutre"
+  ],
+  "size": [
+   541,
+   1100
+  ]
+ },
+ "victor": {
+  "exprs": [
+   "joie",
+   "neutre"
+  ],
+  "size": [
+   508,
+   1100
+  ]
+ },
+ "mia": {
+  "exprs": [
+   "joie",
+   "neutre",
+   "triste"
+  ],
+  "size": [
+   274,
+   1100
+  ]
+ },
+ "odile": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ },
+ "samia": {
+  "exprs": [
+   "calme",
+   "doute",
+   "gene",
+   "inquiet",
+   "joie",
+   "malice",
+   "neutre",
+   "serieux",
+   "sourire",
+   "surprise",
+   "triste"
+  ],
+  "size": [
+   458,
+   1100
+  ]
+ }
+}

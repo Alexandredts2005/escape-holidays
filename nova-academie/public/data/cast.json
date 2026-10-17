@@ -1,0 +1,280 @@
+{
+ "students": [
+  "lea",
+  "hugo",
+  "zack",
+  "ines",
+  "maelle",
+  "kenza",
+  "noah",
+  "jade",
+  "sacha"
+ ],
+ "chars": {
+  "lea": {
+   "name": "Léa",
+   "role": "Élève",
+   "from": "Quimper",
+   "age": 19,
+   "color": "#7fd37f",
+   "src": "cabbit",
+   "bio": "Auteure-compositrice timide, guitare et carnet de chansons toujours sous le bras.",
+   "stats": {
+    "voix": 62,
+    "danse": 40,
+    "scene": 45,
+    "culture": 70
+   }
+  },
+  "hugo": {
+   "name": "Hugo",
+   "role": "Élève",
+   "from": "Marseille",
+   "age": 20,
+   "color": "#ff9f43",
+   "src": "cabbit",
+   "bio": "Le clown du château. Danseur de rue, il rêve d'une comédie musicale.",
+   "stats": {
+    "voix": 48,
+    "danse": 66,
+    "scene": 60,
+    "culture": 40
+   }
+  },
+  "zack": {
+   "name": "Zack",
+   "role": "Élève",
+   "from": "Lille",
+   "age": 21,
+   "color": "#a55eea",
+   "src": "cabbit",
+   "bio": "Rockeur rebelle, voix éraillée, cœur tendre caché sous les clous.",
+   "stats": {
+    "voix": 64,
+    "danse": 35,
+    "scene": 58,
+    "culture": 55
+   }
+  },
+  "ines": {
+   "name": "Inès",
+   "role": "Élève",
+   "from": "Lyon",
+   "age": 20,
+   "color": "#ffd32a",
+   "src": "cabbit",
+   "bio": "Diva pop ultra déterminée. Elle est venue pour gagner, et le dit.",
+   "stats": {
+    "voix": 72,
+    "danse": 64,
+    "scene": 66,
+    "culture": 50
+   }
+  },
+  "maelle": {
+   "name": "Maëlle",
+   "role": "Élève",
+   "from": "Nantes",
+   "age": 18,
+   "color": "#ff6b81",
+   "src": "berry",
+   "berry": {
+    "body": 3,
+    "skin": 6,
+    "outfit": 0,
+    "hair": "hair2_color2"
+   },
+   "bio": "Romantique et théâtrale, elle vit chaque chanson comme une pièce.",
+   "stats": {
+    "voix": 55,
+    "danse": 48,
+    "scene": 64,
+    "culture": 52
+   }
+  },
+  "kenza": {
+   "name": "Kenza",
+   "role": "Élève",
+   "from": "Saint-Denis",
+   "age": 21,
+   "color": "#ff4757",
+   "src": "berry",
+   "berry": {
+    "body": 2,
+    "skin": 3,
+    "outfit": 0,
+    "hair": "hair3_color1"
+   },
+   "bio": "Voix soul puissante, franche et protectrice avec les plus jeunes.",
+   "stats": {
+    "voix": 70,
+    "danse": 55,
+    "scene": 55,
+    "culture": 48
+   }
+  },
+  "noah": {
+   "name": "Noah",
+   "role": "Élève",
+   "from": "Toulouse",
+   "age": 19,
+   "color": "#1e90ff",
+   "src": "berry",
+   "berry": {
+    "body": 1,
+    "skin": 2,
+    "outfit": 1,
+    "hair": "hair4_color1"
+   },
+   "bio": "Guitariste discret, il parle peu mais écoute tout.",
+   "stats": {
+    "voix": 50,
+    "danse": 38,
+    "scene": 40,
+    "culture": 66
+   }
+  },
+  "jade": {
+   "name": "Jade",
+   "role": "Élève",
+   "from": "Nice",
+   "age": 18,
+   "color": "#ff9ff3",
+   "src": "berry",
+   "berry": {
+    "body": 5,
+    "skin": 5,
+    "outfit": 2,
+    "hair": "hair2_color3"
+   },
+   "bio": "Influenceuse pétillante, 200 000 abonnés et beaucoup de choses à prouver.",
+   "stats": {
+    "voix": 42,
+    "danse": 52,
+    "scene": 50,
+    "culture": 35
+   }
+  },
+  "sacha": {
+   "name": "Sacha",
+   "role": "Élève",
+   "from": "Liège",
+   "age": 22,
+   "color": "#00d2d3",
+   "src": "berry",
+   "berry": {
+    "body": 4,
+    "skin": 4,
+    "outfit": 1,
+    "hair": "hair1_color2"
+   },
+   "bio": "Formation lyrique, humour pince-sans-rire, mystère permanent.",
+   "stats": {
+    "voix": 66,
+    "danse": 42,
+    "scene": 52,
+    "culture": 68
+   }
+  },
+  "helene": {
+   "name": "Hélène Marchal",
+   "role": "Directrice",
+   "color": "#f8c291",
+   "src": "raquel",
+   "bio": "Ancienne chanteuse de cabaret, exigeante et bienveillante."
+  },
+  "victor": {
+   "name": "Victor Delmas",
+   "role": "Professeur de chant",
+   "color": "#82ccdd",
+   "src": "cabbit",
+   "bio": "Coach vocal légendaire. Ne supporte pas les fausses notes… ni les excuses."
+  },
+  "mia": {
+   "name": "Mia Kowalski",
+   "role": "Professeure de danse",
+   "color": "#e55039",
+   "src": "cabbit",
+   "bio": "Chorégraphe passée par Broadway. Compte toujours jusqu'à huit."
+  },
+  "odile": {
+   "name": "Odile Ferrand",
+   "role": "Professeure de théâtre",
+   "color": "#b8e994",
+   "src": "berry",
+   "berry": {
+    "body": 4,
+    "skin": 1,
+    "outfit": 0,
+    "hair": "hair1_color3"
+   },
+   "bio": "Comédienne de théâtre classique, adore les silences."
+  },
+  "samia": {
+   "name": "Samia Belkacem",
+   "role": "Présentatrice des primes",
+   "color": "#fad390",
+   "src": "berry",
+   "berry": {
+    "body": 2,
+    "skin": 4,
+    "outfit": 2,
+    "hair": "hair2_color1"
+   },
+   "bio": "Voix chaleureuse des primes du samedi soir."
+  }
+ },
+ "berryFaces": {
+  "joie": 1,
+  "malice": 2,
+  "sourire": 3,
+  "neutre": 4,
+  "calme": 5,
+  "doute": 6,
+  "serieux": 7,
+  "surprise": 8,
+  "gene": 8,
+  "triste": 9,
+  "inquiet": 8
+ },
+ "fallback": {
+  "sourire": [
+   "joie",
+   "neutre"
+  ],
+  "malice": [
+   "joie",
+   "neutre"
+  ],
+  "serieux": [
+   "neutre"
+  ],
+  "calme": [
+   "neutre"
+  ],
+  "surprise": [
+   "doute",
+   "gene",
+   "neutre"
+  ],
+  "inquiet": [
+   "triste",
+   "gene",
+   "neutre"
+  ],
+  "gene": [
+   "triste",
+   "neutre"
+  ],
+  "doute": [
+   "gene",
+   "neutre"
+  ],
+  "triste": [
+   "neutre"
+  ],
+  "joie": [
+   "neutre"
+  ]
+ }
+}

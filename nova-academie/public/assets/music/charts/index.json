@@ -1,0 +1,138 @@
+[
+ {
+  "id": "premier_pas",
+  "title": "Premier Pas",
+  "bpm": 100,
+  "duration": 124.8,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "chateau_reves",
+  "title": "Le Château des Rêves",
+  "bpm": 116,
+  "duration": 107.586,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "lumiere",
+  "title": "Lumière",
+  "bpm": 76,
+  "duration": 101.053,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "danse_avec_moi",
+  "title": "Danse avec moi",
+  "bpm": 124,
+  "duration": 100.645,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "ville_nuit",
+  "title": "Ma ville la nuit",
+  "bpm": 108,
+  "duration": 115.556,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "ne_lache_rien",
+  "title": "Ne lâche rien",
+  "bpm": 132,
+  "duration": 94.545,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "soleil_octobre",
+  "title": "Soleil d'octobre",
+  "bpm": 96,
+  "duration": 130.0,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "mille_etoiles",
+  "title": "Mille étoiles",
+  "bpm": 82,
+  "duration": 93.659,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "feu_artifice",
+  "title": "Feu d'artifice",
+  "bpm": 128,
+  "duration": 97.5,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "deux_voix",
+  "title": "Deux voix",
+  "bpm": 92,
+  "duration": 135.652,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "derniere_scene",
+  "title": "La Dernière Scène",
+  "bpm": 100,
+  "duration": 124.8,
+  "kind": "song",
+  "voice": true
+ },
+ {
+  "id": "vocalise_1",
+  "title": "Vocalise : Do Ré Mi",
+  "bpm": 88,
+  "duration": 32.727,
+  "kind": "vocalise",
+  "voice": true
+ },
+ {
+  "id": "vocalise_2",
+  "title": "Vocalise : A É I O U",
+  "bpm": 84,
+  "duration": 34.286,
+  "kind": "vocalise",
+  "voice": true
+ },
+ {
+  "id": "vocalise_3",
+  "title": "Vocalise : Staccato",
+  "bpm": 96,
+  "duration": 30.0,
+  "kind": "vocalise",
+  "voice": true
+ },
+ {
+  "id": "danse_echauffement",
+  "title": "Échauffement",
+  "bpm": 112,
+  "duration": 85.714,
+  "kind": "dance",
+  "voice": false
+ },
+ {
+  "id": "danse_funk",
+  "title": "Choré Funk",
+  "bpm": 118,
+  "duration": 81.356,
+  "kind": "dance",
+  "voice": false
+ },
+ {
+  "id": "danse_electro",
+  "title": "Choré Électro",
+  "bpm": 126,
+  "duration": 76.19,
+  "kind": "dance",
+  "voice": false
+ }
+]
