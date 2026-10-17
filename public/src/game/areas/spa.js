@@ -330,7 +330,7 @@ export function buildSpa(game, b, hotel) {
   P.sauLock = sauLock;
   game.interact.add({
     pos: [-16.8, 1.3, -34.6], r: 1.6, label: () => (game.timers.sauna ? 'Déverrouiller la porte du sauna (molettes)' : null),
-    inspect: { cam: [-16.85, 1.32, -34.5], look: [-16.33, 1.25, -34.5], fov: 42, title: 'Serrure intérieure du sauna', clickables: () => sauLock.clickables(), hidePlayer: true },
+    inspect: { cam: [-16.9, 1.27, -34.5], look: [-16.33, 1.25, -34.5], fov: 42, title: 'Serrure intérieure du sauna', clickables: () => sauLock.clickables(), hidePlayer: true },
   });
   game.interact.add({
     pos: [-16.6, 1.2, -36], r: 1.4, label: () => (st.flag('sauna_open') && !game.timers.sauna && game.player.position.x < -16 && !game.doors.sauna.open ? 'Ouvrir la porte du sauna' : null),

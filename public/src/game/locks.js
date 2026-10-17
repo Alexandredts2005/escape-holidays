@@ -67,9 +67,13 @@ export class DialLock {
       this.group.add(cap);
       this.wheels.push({ mesh: wh, pos: 0, target: 0, tex });
     }
-    const mark = new THREE.Mesh(new THREE.BoxGeometry(total + 0.04, 0.004, 0.004), toon(0xff3355));
-    mark.position.set(0, -radius * 0.55, radius + 0.004);
-    this.group.add(mark);
+    // reading marks on both sides of the wheels, at the front-facing row
+    for (const sx of [-1, 1]) {
+      const mark = new THREE.Mesh(new THREE.ConeGeometry(radius * 0.22, radius * 0.4, 3), toon(0xff3355, { emissive: 0x550011 }));
+      mark.rotation.z = sx * Math.PI / 2;
+      mark.position.set(sx * (total / 2 + radius * 0.35), 0, radius * 0.75);
+      this.group.add(mark);
+    }
     this.wheels.forEach((w) => this.apply(w));
   }
 

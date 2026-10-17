@@ -328,7 +328,7 @@ export function buildSuite(game, b, hotel) {
   };
   game.interact.add({
     pos: [-23.0, Y + 0.6, -20.6], r: 1.6, label: () => (st.flag('minibar') ? null : 'Examiner le cadenas du minibar'),
-    inspect: { cam: [-22.6, Y + 0.62, -20.6], look: [-23.08, Y + 0.5, -20.6], fov: 40, title: 'Cadenas du minibar — 3 chiffres', clickables: () => lock.clickables() },
+    inspect: { cam: [-22.62, Y + 0.53, -20.6], look: [-23.08, Y + 0.5, -20.6], fov: 40, title: 'Cadenas du minibar — 3 chiffres', clickables: () => lock.clickables() },
   });
   biscuitSpot(game, b, 'b_minibar', -23.45, Y + 0.45, -20.75, 2, 'Prendre les biscuits du minibar');
   const spoon = (await_item('spoon'));

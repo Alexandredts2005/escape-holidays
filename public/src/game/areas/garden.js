@@ -102,7 +102,7 @@ export function buildGarden(game, b, E) {
   game.story.onApply(() => { if (st.flag('net_unlocked')) { fl.group.visible = false; chain.visible = false; } });
   game.interact.add({
     pos: [29.4, 1.1, -16.5], r: 1.8, label: () => (st.flag('net_unlocked') ? null : 'Examiner le cadenas de l\'épuisette'),
-    inspect: { cam: [29.75, 1.25, -16.55], look: [29.12, 1.05, -16.55], fov: 40, title: 'Cadenas à fruits — 3 molettes', clickables: () => fl.clickables() },
+    inspect: { cam: [29.7, 1.08, -16.55], look: [29.12, 1.05, -16.55], fov: 40, title: 'Cadenas à fruits — 3 molettes', clickables: () => fl.clickables() },
   });
   pickup(game, { id: 'epuisette', item: 'epuisette', obj: net, pos: [29.3, 1.0, -15.9], visible: () => st.flag('net_unlocked'), label: 'Prendre l\'épuisette' });
   readable(game, {
