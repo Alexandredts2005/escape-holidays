@@ -7,6 +7,5 @@ if ! command -v node >/dev/null 2>&1; then
   read -r -p "Appuie sur Entrée pour fermer."
   exit 1
 fi
-echo "Lancement du jeu sur http://localhost:8080 (ferme cette fenêtre pour arrêter)"
-(sleep 1; open http://localhost:8080 2>/dev/null || xdg-open http://localhost:8080 2>/dev/null) &
-node server.js
+echo "Lancement du jeu... le navigateur va s'ouvrir. Garde cette fenêtre ouverte pendant que tu joues."
+node server.js --open

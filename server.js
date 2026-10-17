@@ -13,7 +13,14 @@ const TYPES = {
 };
 const COMPRESS = new Set(['.html', '.js', '.css', '.json', '.svg', '.gltf', '.txt']);
 
-http.createServer((req, res) => {
+const OPEN = process.argv.includes('--open');
+const URL_ = `http://localhost:${PORT}`;
+const openBrowser = () => {
+  const cmd = process.platform === 'win32' ? `start "" "${URL_}"` : process.platform === 'darwin' ? `open "${URL_}"` : `xdg-open "${URL_}"`;
+  require('child_process').exec(cmd, () => {});
+};
+
+const server = http.createServer((req, res) => {
   let url;
   try { url = decodeURIComponent(new URL(req.url, 'http://x').pathname); } catch (e) { res.writeHead(400); res.end(); return; }
   if (url.endsWith('/')) url += 'index.html';
@@ -30,4 +37,17 @@ http.createServer((req, res) => {
     const stream = fs.createReadStream(file);
     (gz ? stream.pipe(zlib.createGzip()) : stream).pipe(res);
   });
-}).listen(PORT, () => console.log(`Escape Holidays : http://localhost:${PORT}`));
+});
+server.on('error', (e) => {
+  if (e.code === 'EADDRINUSE') {
+    // already running (launcher clicked twice?): just show the game
+    console.log(`Le jeu tourne déjà sur ${URL_}`);
+    if (OPEN) openBrowser();
+    setTimeout(() => process.exit(0), 1500);
+  } else { console.error('Impossible de démarrer le serveur :', e.message); process.exitCode = 1; }
+});
+// the browser is opened only once the server really listens (no "connection refused")
+server.listen(PORT, () => {
+  console.log(`Escape Holidays : ${URL_}  (garde cette fenêtre ouverte pendant que tu joues)`);
+  if (OPEN) openBrowser();
+});
