@@ -56,15 +56,15 @@ Tactile : moitié gauche de l'écran = déplacement, moitié droite = caméra, a
 
 **Le plus simple :** installe [Node.js](https://nodejs.org) (une seule fois), puis double-clique sur
 `Lancer-le-jeu.bat` (Windows) ou `Lancer-le-jeu.command` (Mac). Le jeu s'ouvre tout seul sur
-**http://localhost:8080**. Garde la fenêtre noire ouverte pendant que tu joues.
+**http://localhost:8081**. Garde la fenêtre noire ouverte pendant que tu joues.
 
 Le jeu est un site **100 % statique** (dossier `public/`) : ouvrir `index.html` en double-cliquant ne marche pas,
 il faut passer par un petit serveur.
 
 ```bash
-npm start            # serveur intégré sans dépendance → http://localhost:8080
+npm start            # serveur intégré sans dépendance → http://localhost:8081
 # ou n'importe quel serveur statique :
-python3 -m http.server 8080 -d public
+python3 -m http.server 8081 -d public
 ```
 
 ### Déployer
@@ -73,7 +73,7 @@ python3 -m http.server 8080 -d public
 - **Docker** :
   ```bash
   docker build -t escape-holidays .
-  docker run -p 8080:8080 escape-holidays
+  docker run -p 8081:8081 escape-holidays
   ```
 
 ### Test automatique de bout en bout
@@ -82,7 +82,7 @@ python3 -m http.server 8080 -d public
 les vrais objets interactifs (intro, 24 étapes, 10 canards, fin) en vérifiant qu'aucune erreur ne survient.
 
 ```bash
-npm start &            # ou python3 -m http.server 8080 -d public
+npm start &            # ou python3 -m http.server 8081 -d public
 npm test               # nécessite Playwright (npm i playwright && npx playwright install chromium)
 ```
 

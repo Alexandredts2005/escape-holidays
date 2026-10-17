@@ -7,7 +7,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node tools/playtest.cjs http://localhost:8080/",
+    "test": "node tools/playtest.cjs http://localhost:8081/",
     "music": "python3 tools/music.py public/assets/music",
     "ui": "python3 tools/make_ui.py"
   },

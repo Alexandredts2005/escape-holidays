@@ -1,11 +1,11 @@
-// Minimal production server for Escape Holidays (static files, no dependencies). Usage: PORT=8080 node server.js
+// Minimal production server for Escape Holidays (static files, no dependencies). Usage: PORT=8081 node server.js
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
 const ROOT = path.join(__dirname, 'public');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.glb': 'model/gltf-binary', '.gltf': 'model/gltf+json',
@@ -29,7 +29,10 @@ const server = http.createServer((req, res) => {
   fs.stat(file, (err, st) => {
     if (err || !st.isFile()) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('Not found'); return; }
     const ext = path.extname(file).toLowerCase();
-    const headers = { 'Content-Type': TYPES[ext] || 'application/octet-stream', 'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400' };
+    // always revalidate: an updated game must never run with stale cached scripts
+    const headers = { 'Content-Type': TYPES[ext] || 'application/octet-stream', 'Cache-Control': 'no-cache', 'Last-Modified': st.mtime.toUTCString() };
+    const ims = Date.parse(req.headers['if-modified-since'] || '');
+    if (ims && Math.floor(st.mtimeMs / 1000) <= Math.floor(ims / 1000)) { res.writeHead(304, headers); res.end(); return; }
     const gz = COMPRESS.has(ext) && /\bgzip\b/.test(req.headers['accept-encoding'] || '');
     if (gz) headers['Content-Encoding'] = 'gzip'; else headers['Content-Length'] = st.size;
     res.writeHead(200, headers);

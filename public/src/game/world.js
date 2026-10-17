@@ -104,6 +104,29 @@ function buildTerrain(game, b) {
     if (lo.x < -PIER) wallSeg(lo, at(-PIER - 0.5));
     if (hi.x > PIER) wallSeg(at(PIER + 0.5), hi);
   }
+  // the limit is shown by a line of swimming-zone buoys and their rope, right in front of the invisible fence
+  const buoyLine = islandOutline(1.1, 96);
+  const red = toon(0xe8352b);
+  const white = toon(0xfff6ea);
+  const rope = toon(0xfff1c8);
+  const ballGeo = new THREE.SphereGeometry(0.32, 10, 8);
+  for (let i = 0; i < buoyLine.length; i++) {
+    const a = buoyLine[i];
+    const c = buoyLine[(i + 1) % buoyLine.length];
+    const nearPier = (p) => p.y > 0 && Math.abs(p.x) < 2.6;
+    if (!nearPier(a)) {
+      const ball = new THREE.Mesh(ballGeo, i % 2 ? white : red);
+      ball.position.set(a.x, SEA_Y + 0.08, a.y);
+      ball.scale.y = 0.8;
+      game.scene.add(ball);
+    }
+    if (nearPier(a) || nearPier(c)) continue;
+    const len = a.distanceTo(c);
+    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, len, 5), rope);
+    r.position.set((a.x + c.x) / 2, SEA_Y + 0.1, (a.y + c.y) / 2);
+    r.rotation.set(0, -Math.atan2(c.y - a.y, c.x - a.x), Math.PI / 2, 'YXZ');
+    game.scene.add(r);
+  }
 }
 
 function seaMaterial(game, { shallow = 0x3fd0d8, deep = 0x1676b8, foam = 0xffffff, scale = 1, pool = false } = {}) {
